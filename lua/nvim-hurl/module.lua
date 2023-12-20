@@ -61,7 +61,7 @@ M.hurl_request = function(config)
 
         -- check if data is { "" }
         if type(data) == "table" and #data == 1 and data[0] == "" then
-          data = {"no response body"}
+          data = { "no response body" }
         end
 
         -- iterate string in data and remove all '\r',
@@ -92,12 +92,18 @@ M.show_content_in_fload_window = function(content, content_type, config)
   -- mount/open the component
   M.NVIM_HURL_POPUP:mount()
 
-  vim.api.nvim_buf_set_keymap(M.NVIM_HURL_POPUP.bufnr, 'n', '<ESC>', ':lua require("nvim-hurl.module").close_float_window()<CR>', {
-    nowait = true,
-    noremap = true,
-    silent = true,
-    expr = false,
-  })
+  vim.api.nvim_buf_set_keymap(
+    M.NVIM_HURL_POPUP.bufnr, 
+    'n', 
+    '<ESC>', 
+    ':lua require("nvim-hurl.module").close_float_window()<CR>', 
+    {
+      nowait = true,
+      noremap = true,
+      silent = true,
+      expr = false,
+    }
+  )
 
   -- unmount component when cursor leaves buffer
   M.NVIM_HURL_POPUP:on(event.BufLeave, function()
