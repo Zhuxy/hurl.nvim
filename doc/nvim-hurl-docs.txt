@@ -1,0 +1,69 @@
+nvim-hurl-docs.txt*     For Neovim >= 0.8.0     Last change: 2023 Dec. 20 
+
+Author: Ian.Zhu 
+Mail:   redilove@gmail.com
+
+==============================================================================
+Table of Contents                         *nvim-hurl*
+
+1. Introduction				  |nvim-hurl-introduction|
+2. Configuration			  |nvim-hurl-docs-congiguration|
+3. Usage				  |nvim-hurl-docs-usage|
+
+==============================================================================
+1. Introduction                                    *nvim-hurl-docs-introduction*
+
+**hurl.nvim** is a lua plugin for Neovim. When launching, it will feed your current buffer's content as a [Hurl file](https://hurl.dev/docs/hurl-file.html) to [Hurl](https://hurl.dev) and show it's response in a float window.
+
+The main goal of this plugin is to quickly test some http(s) requests, not for heavy use cases like API testing or response assertion.
+
+
+==============================================================================
+2. Configuration                                  *nvim-hurl-docs-congiguration*
+
+>
+{
+  bin = "hurl", -- hurl binary command or it's full path
+  popup_style = {  -- style of the popup window
+                   -- these are the configurations of nui.popup()
+                   -- please check them in https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup
+    position = "40%",
+    size = {
+      width = "80%",
+      height = "60%",
+    },
+    border = {
+      padding = {
+        top = 2,
+        bottom = 2,
+        left = 2,
+        right = 2,
+      },
+      style = "rounded",
+    },
+  }
+}
+<
+
+==============================================================================
+3. Usage                                                  *nvim-hurl-docs-usage*
+
+
+Open up a blank buffer, and add some Hurl scripts in it:
+
+>
+GET https://httpbin.org/get
+<
+
+Launch vim command: `:HurlRequest`.
+
+Then you will see the http response in a float window.
+
+You can aslo bind this function to a key in lua:
+
+>
+vim.keymap.set("n", "<leader>rr", "<cmd>lua require('nvim-hurl').hurl_request()<cr>", { desc = "Request with Hurl" })
+<
+
+Using `<ESC>` to leave the float window.
+
