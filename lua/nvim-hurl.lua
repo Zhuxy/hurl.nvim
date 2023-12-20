@@ -33,7 +33,7 @@ local config = {
       winblend = 10,
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
     },
-  }
+  },
 }
 
 ---@class MyModule

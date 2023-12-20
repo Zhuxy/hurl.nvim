@@ -78,7 +78,6 @@ M.hurl_request = function(config)
 
   vim.fn.chansend(job_id, content)
   vim.fn.chanclose(job_id, "stdin")
-
 end
 
 M.NVIM_HURL_POPUP = nil
@@ -93,10 +92,10 @@ M.show_content_in_fload_window = function(content, content_type, config)
   M.NVIM_HURL_POPUP:mount()
 
   vim.api.nvim_buf_set_keymap(
-    M.NVIM_HURL_POPUP.bufnr, 
-    'n', 
-    '<ESC>', 
-    ':lua require("nvim-hurl.module").close_float_window()<CR>', 
+    M.NVIM_HURL_POPUP.bufnr,
+    'n',
+    '<ESC>',
+    ':lua require("nvim-hurl.module").close_float_window()<CR>',
     {
       nowait = true,
       noremap = true,
