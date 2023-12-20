@@ -93,9 +93,9 @@ M.show_content_in_fload_window = function(content, content_type, config)
 
   vim.api.nvim_buf_set_keymap(
     M.NVIM_HURL_POPUP.bufnr,
-    'n',
-    '<ESC>',
-    ':lua require("nvim-hurl.module").close_float_window()<CR>',
+    "n",
+    "<ESC>",
+    ":lua require('nvim-hurl.module').close_float_window()<CR>",
     {
       nowait = true,
       noremap = true,
