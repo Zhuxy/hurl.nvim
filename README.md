@@ -12,6 +12,7 @@ The main goal of this plugin is to quickly test some http(s) requests, not for h
 
 * Neovim >=0.9.0
 * [Hurl](https://hurl.dev)
+* [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)
 
 ## Installation
 
@@ -74,7 +75,7 @@ Then you will see the http response in a float window like this:
 
 ![showcase](https://raw.githubusercontent.com/Zhuxy/hurl.nvim/main/.github/showcase.png)
 
-You can aslo bind this function to a key in lua:
+You can also bind this function to a key in lua:
 
 ```lua
 vim.keymap.set("n", "<leader>rr", "<cmd>lua require('nvim-hurl').hurl_request()<cr>", { desc = "Request with Hurl" })
