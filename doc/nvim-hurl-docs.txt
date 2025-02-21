@@ -24,6 +24,7 @@ The main goal of this plugin is to quickly test some http(s) requests, not for h
 >
 {
   bin = "hurl", -- hurl binary command or it's full path
+  timeout = 30, -- timeout in seconds for the request
   popup_style = {  -- style of the popup window
                    -- these are the configurations of nui.popup()
                    -- please check them in https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup
@@ -66,4 +67,3 @@ vim.keymap.set("n", "<leader>rr", "<cmd>lua require('nvim-hurl').hurl_request()<
 <
 
 Using `<ESC>` to leave the float window.
-

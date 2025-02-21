@@ -3,9 +3,11 @@ local module = require("nvim-hurl.module")
 
 ---@class Config
 ---@field bin string the hurl command's path in your system
----@field popup_style see nui.popup()'s arguments
+---@field timeout number timeout in seconds for the request
+---@field popup_style table see nui.popup()'s arguments
 local config = {
   bin = "hurl",
+  timeout = 30,  -- default timeout 30 seconds
   popup_style = {
     position = "40%",
     size = {

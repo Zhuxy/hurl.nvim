@@ -40,6 +40,7 @@ default configurations:
 ```lua
 {
   bin = "hurl", -- hurl binary command or it's full path
+  timeout = 30, -- timeout in seconds for the request
   popup_style = {  -- style of the popup window
                    -- these are the configurations of nui.popup()
                    -- please check them in https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup
